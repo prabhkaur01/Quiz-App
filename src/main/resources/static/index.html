@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quiz Arena</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="app">
+    <header class="topbar">
+        <div class="brand">Quiz Arena</div>
+        <div class="controls">
+            <input id="username" class="input" placeholder="Username (for leaderboard)"/>
+            <select id="topic" class="select">
+                <option value="">All Topics</option>
+                <option>Java</option>
+                <option>DSA</option>
+            </select>
+            <select id="difficulty" class="select">
+                <option value="">Any Diff</option>
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+            </select>
+            <button id="startBtn" class="btn">Start Quiz</button>
+        </div>
+    </header>
+
+    <main class="grid">
+        <aside class="left">
+            <h3>Questions</h3>
+            <ul id="questionList" class="q-list"></ul>
+        </aside>
+
+        <section class="center">
+            <div id="questionPanel" class="panel hidden">
+                <h2 id="qTitle"></h2>
+                <div id="qDesc" class="desc"></div>
+                <div id="choices" class="choices"></div>
+                <div class="nav">
+                    <button id="prevBtn" class="btn secondary">Prev</button>
+                    <button id="nextBtn" class="btn">Next</button>
+                    <button id="submitBtn" class="btn primary">Submit</button>
+                </div>
+                <div id="feedback" class="feedback"></div>
+            </div>
+            <div id="welcome" class="welcome">
+                <h2>Welcome!</h2>
+                <p>Pick a topic & difficulty, press <b>Start Quiz</b>, and go.</p>
+            </div>
+        </section>
+
+        <aside class="right">
+            <div class="card">
+                <div class="stat"><span>Timer:</span> <span id="timer">00:00</span></div>
+                <div class="stat"><span>Score:</span> <span id="score">0</span></div>
+                <div class="stat"><span>Streak:</span> <span id="streak">0</span></div>
+            </div>
+            <div class="card">
+                <h3>Leaderboard (Top 20)</h3>
+                <ol id="leaderboard"></ol>
+            </div>
+        </aside>
+    </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
